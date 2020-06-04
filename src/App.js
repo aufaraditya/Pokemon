@@ -15,8 +15,8 @@ function App() {
     setLoading(true)
     axios.get(currentPageURL).then(res =>{
       setLoading(false)
-      setNextPageURL(res.data.next)
-      setPreviousPageURL(res.data.previous)
+      setNextPageURL(res.data.next) /*Next Data from the API */
+      setPreviousPageURL(res.data.previous) /*Previous Data from the API */
       setPokemon(res.data.results.map(p => p.name))
     })
   }, [currentPageURL]);
